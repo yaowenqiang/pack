@@ -4,8 +4,12 @@ package pack
 
 //go generate
 
-func Add(i, j int) int {
-	return i + j
+func Add(nums... int) int {
+	var result int
+	for _, i := range nums {
+		result += i
+	}
+	return result
 	//return 0
 
 }
