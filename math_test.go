@@ -19,3 +19,12 @@ func TestCanAddMembers(t *testing.T) {
 }
 
 
+func TestSubtractNumbers(t *testing.T) {
+	result := Subtract(10,5)
+	if result != 5 {
+		t.Log("Failed to substrct two numbers properly")
+		t.Fail()
+	}
+
+}
+

@@ -17,3 +17,10 @@ func Add(nums... int) int {
 	//return 0
 
 }
+
+func Subtract(initial int, nums ...int) int {
+	for _, i := range nums {
+		initial -= i
+	}
+	return initial
+}
