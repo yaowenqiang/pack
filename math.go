@@ -6,6 +6,10 @@ package pack
 
 func Add(nums... int) int {
 	var result int
+	if len(nums) == 0 {
+		println("no argumenhts provided")
+		return 0
+	}
 	for _, i := range nums {
 		result += i
 	}
