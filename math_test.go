@@ -2,10 +2,15 @@ package pack
 
 import (
 	"testing"
+	"time"
 )
 
+//go test -timeout 2s -v
+
 func TestCanAddMembers(t *testing.T) {
+	t.Parallel()
 	result := Add(1,2)
+	time.Sleep(3 + time.Second)
 	if result != 3 {
 		t.Log("Failed to add one and two")
 		t.Fail()
@@ -20,7 +25,9 @@ func TestCanAddMembers(t *testing.T) {
 
 
 func TestSubtractNumbers(t *testing.T) {
+	t.Parallel()
 	result := Subtract(10,5)
+	time.Sleep(1 + time.Second)
 	if result != 5 {
 		t.Log("Failed to substrct two numbers properly")
 		t.Fail()
