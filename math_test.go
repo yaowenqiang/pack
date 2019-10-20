@@ -12,8 +12,10 @@ func TestCanAddMembers(t *testing.T) {
 	result := Add(1,2)
 	time.Sleep(3 + time.Second)
 	if result != 3 {
-		t.Log("Failed to add one and two")
-		t.Fail()
+		//t.Log("Failed to add one and two")
+		t.Fatal("Failed to add one and two")
+		//t.Fail()
+		//t.FailNow()
 	}
 
 	result = Add(1,2, 3,4)
