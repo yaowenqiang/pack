@@ -3,7 +3,19 @@ package pack
 import (
 	"testing"
 	"time"
+	 "os"
 )
+
+// custom runner
+
+
+func TestMain(m *testing.M) {
+	println("Tests are about to run!")
+	result := m.Run()
+	println("Tests done executing")
+	os.Exit(result)
+}
+
 
 //go test -timeout 2s -v
 
