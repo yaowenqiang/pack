@@ -8,6 +8,10 @@ import (
 //go test -timeout 2s -v
 
 func TestCanAddMembers(t *testing.T) {
+	if testing.Short() {
+		//go test -short
+		t.Skip("Skipping long tests")	
+	}
 	t.Parallel()
 	result := Add(1,2)
 	time.Sleep(3 + time.Second)
@@ -34,6 +38,12 @@ func TestSubtractNumbers(t *testing.T) {
 		t.Log("Failed to substrct two numbers properly")
 		t.Fail()
 	}
+}
 
+func TestCanMltiplyNmers(t *testing.T) {
+	//t.Skip("Not implemented yet!")
+	if testing.Verbose() {
+		t.Skip("Not implemented yet")
+	}
 }
 
