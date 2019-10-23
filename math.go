@@ -5,7 +5,7 @@ package pack
 //go generate
 
 func Add(nums... int) int {
-	return 0
+	//return 0
 	var result int
 	if len(nums) == 0 {
 		println("no argumenhts provided")

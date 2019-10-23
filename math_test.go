@@ -6,6 +6,15 @@ import (
 	 "os"
 )
 
+var addTable = []struct {
+	in []int
+	out int
+} {
+	{[]int{1,2},3},
+	{[]int{1,2,3, 4}, 10},
+}
+
+
 // custom runner
 
 
@@ -24,6 +33,15 @@ func TestCanAddMembers(t *testing.T) {
 		//go test -short
 		t.Skip("Skipping long tests")	
 	}
+
+
+	for _, entry := range addTable {
+		result := Add(entry.in...)
+		if result != entry.out {
+			t.Error("Failed to add numbers ad expected!")
+		}
+	}
+	/*
 	t.Parallel()
 	result := Add(1,2)
 	time.Sleep(3 + time.Second)
@@ -38,6 +56,7 @@ func TestCanAddMembers(t *testing.T) {
 	if result != 10 {
 		t.Error("Failed to add more than two numbers")
 	}
+	*/
 
 }
 
