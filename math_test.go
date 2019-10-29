@@ -2,6 +2,7 @@ package pack
 
 import (
 	"testing"
+	_ "testing/quick"
 	"time"
 	 "os"
 )
@@ -77,4 +78,17 @@ func TestCanMltiplyNmers(t *testing.T) {
 		t.Skip("Not implemented yet")
 	}
 }
+
+/*
+func TestOddMultipleOfThree(t *testing.T) {
+	f := func(x int) bool {
+		y := OldMultipleOfThree(x)
+		return y%2 == 1 && y%3 == 0
+	}
+
+	if err := quick.Check(f, nil); err != nil {
+		t.Error(err)
+	}
+}
+*/
 

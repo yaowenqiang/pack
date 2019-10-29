@@ -1,6 +1,6 @@
-package main
+package pack
 import (
-	"fmt"
+	 "fmt"
 	"math/rand"
 	"testing/quick"
 	"time"
@@ -14,10 +14,11 @@ func main() {
 	rand.New(rand.NewSource(time.Now().Unix())))
 
 	if ok {
-		//fmt.Println(val.Float())
+		fmt.Println(val.Float())
 		//fmt.Println(val.Interface().(MyStruct))
-		fmt.Println("%v", val)
+		//fmt.Println("%v", val)
 	}
+
 }
 
 type MyStruct struct {
