@@ -19,3 +19,14 @@ func BenchmarkExample(b *testing.B) {
 		buf.Reset()
 	}
 }
+
+func BenchmarkTemplate(b *testing.B) {
+	//user := NewUser("Arthur")
+	//b.ResetTimer()
+	for i := 0; i < b.N; i ++ {
+		b.StopTimer()
+		user := NewUser("Arthur")
+		b.StartTimer()
+		SayHello(user)
+	}
+}
