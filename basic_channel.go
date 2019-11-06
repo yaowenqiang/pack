@@ -16,12 +16,21 @@ func main() {
 	for _, word := range words {
 		ch2 <- word
 	}
-	close(ch)
+	close(ch2)
 
-	for i := 0; i < len(words); i ++ {
-		fmt.Print(<-ch2 + " ")
+	/*
+	for {
+		if msg, ok := <- ch2; ok {
+			fmt.Print(msg + " ")
+		} else {
+			break
+		}
+	}
+	*/
+
+	for msg := range ch2 {
+		fmt.Print(msg + " ")
 	}
 
-	ch <- "test"
 }
 
